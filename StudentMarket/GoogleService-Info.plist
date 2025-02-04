@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>693053117231-u4b47ksih6uisiesf65tvmq6grinjfld.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.693053117231-u4b47ksih6uisiesf65tvmq6grinjfld</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDIZ-lO32m2s9Jf1Xx1SxAVqdByUpTdUwM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>693053117231</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.LukeWolfram.StudentMarket</string>
+	<key>PROJECT_ID</key>
+	<string>studentmarket-1449e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>studentmarket-1449e.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:693053117231:ios:2f05cda8c34f5637c8c7da</string>
+</dict>
+</plist>
