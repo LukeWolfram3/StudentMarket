@@ -80,6 +80,7 @@ final class AuthenticationManager {
             return true
         }
         
+        // This seems sketchy to me because the .isEmailVerified Firebase function could refer to their google email and not the student email, maybe I'm wrong but I would like to further test this to make sure.
         if user.isEmailVerified {
             //User's email is verified but not cached yet
             VerificationCache.setUserVerified(uid: user.uid )

@@ -9,6 +9,9 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
+// Project is in github
+//CLIENT ACCESS HAS EXPIRED-NEEDS TO BE RESET
+
 @main
 struct StudentMarketApp: App {
     
@@ -17,7 +20,7 @@ struct StudentMarketApp: App {
 
     var body: some Scene {
         WindowGroup {
-                CrashView()
+            PostNewItem()
         }
     }
 }
@@ -27,5 +30,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        
     }
 }

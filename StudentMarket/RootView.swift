@@ -11,11 +11,13 @@ import SwiftUI
 
 // Instead of using a case for the email is not verified, we are going to use the Bool instead to trigger a sheet from the sign in View
 
+// I think that we should look into getting rid of passing signInAndCreateUsersViewModel to the TabbarView. signInAndCreateUsersViewModel should only be used for prior to authenticated users such as creating users or signing them in, and once we get that we relie on the AuthDataResultModel from the authenticationViewModel
+
 
 @MainActor
 struct RootView: View {
     @State private var authenticationViewModel = AuthenticationViewModel()
-    @State private var signInAndCreateUsersViewModel: SignInAndCreateUsers = SignInAndCreateUsers()
+    @State private var signInAndCreateUsersViewModel = SignInAndCreateUsers()
     
     
     var body: some View {
@@ -27,7 +29,8 @@ struct RootView: View {
                 case .unauthenticated:
                     SignInView(
                         signInAndCreateUsersViewModel: signInAndCreateUsersViewModel,
-                        authenticationViewModel: authenticationViewModel)
+                        authenticationViewModel: authenticationViewModel
+                    )
                 case .authenticated:
                     NavigationStack {
 //                        ProfileView(
@@ -36,7 +39,10 @@ struct RootView: View {
 //                        MainView(
 //                            authenticationViewModel: authenticationViewModel,
 //                            signInAndCreateUsersViewModel: signInAndCreateUsersViewModel)
-                        TabbarView(authenticationViewModel: authenticationViewModel, signInAndCreateUsersViewModel: signInAndCreateUsersViewModel)
+                        TabbarView(
+                            authenticationViewModel: authenticationViewModel, 
+                            signInAndCreateUsersViewModel: signInAndCreateUsersViewModel
+                        )
                     }
                 }
             }

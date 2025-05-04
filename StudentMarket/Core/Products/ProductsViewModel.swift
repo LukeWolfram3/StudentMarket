@@ -64,7 +64,9 @@ final class ProductsViewModel {
     
     func getProducts() {
         Task {
-            let (newProducts, lastDocument) = try await ProductsManager.shared.getAllProducts(priceDescending: selectedFilter?.priceDescending, forCategory: selectedCategory?.categoryKey, count: 10, lastDocument: lastDocument)
+            let (newProducts, lastDocument) = try await ProductsManager.shared.getAllProducts(
+                priceDescending: selectedFilter?.priceDescending, forCategory: selectedCategory?.categoryKey, count: 10, lastDocument: lastDocument
+            )
             
             self.products.append(contentsOf: newProducts)
             if let lastDocument {

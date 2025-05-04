@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+/*
+Change this so that the signInAndCreateUsersViewModel does not bind to the input fields and instead when the user actually hits the sign in button then set those values to the signInAndCreateUsersViewModel values
+ */
+
 @MainActor
 struct SignInView: View {
+    
     
     
     @Bindable var signInAndCreateUsersViewModel: SignInAndCreateUsers

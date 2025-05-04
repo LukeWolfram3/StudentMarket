@@ -25,6 +25,7 @@ struct ResetPasswordView: View {
                 header
                 Spacer()
                 emailTextField
+                sendEmailButton
                 Spacer()
                 Spacer()
                 
@@ -86,12 +87,14 @@ extension ResetPasswordView {
                         .foregroundStyle(Color("MainColor"))
                         .opacity(isValidUNCEmail(signInAndCreateUsersViewModel.email) ? 1 : 0)
                         .padding(.trailing, 10)
-
+                    
                 }
             }
             .padding(.horizontal)
-
-            
+        }
+    }
+        
+        private var sendEmailButton: some View {
             Button {
                 if isValidUNCEmail(signInAndCreateUsersViewModel.email) {
                     Task {
@@ -124,9 +127,7 @@ extension ResetPasswordView {
                     .padding()
             }
             .withPressableStyle()
-            
         }
-    }
     
     
     func isValidUNCEmail(_ email: String) -> Bool {

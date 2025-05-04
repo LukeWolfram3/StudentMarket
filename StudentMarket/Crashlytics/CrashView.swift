@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-import FirebaseCrashlytics
-import FirebaseCrashlyticsSwift
-
-final class CrashManager {
-    
-    static let shared = CrashManager()
-    private init() { }
-    
-    func setUserId(userId: String) {
-        Crashlytics.crashlytics().setUserID(userId)
-    }
-}
 
 struct CrashView: View {
     var body: some View {
@@ -28,14 +16,25 @@ struct CrashView: View {
             VStack(spacing: 40) {
                 
                 Button("Click me 1") {
+                    CrashManager.shared.addLog(message: "button_1_clicked")
+                    
                     let myString: String? = nil
-                    let string2 = myString!
+                    
+                    guard let myString else {
+                        CrashManager.shared.sendNonFatal(error: URLError(.badURL))
+                        return
+                    }
+                    let string2 = myString
                 }
                 
                 Button("Click me 2")  {
+                    CrashManager.shared.addLog(message: "button_2_clicked")
+
                     fatalError("This was a fatal crash.")
                 }
                 Button("Click me 3") {
+                    CrashManager.shared.addLog(message: "button_3_clicked")
+
                     let array: [String] = []
                     let item = array[0]
                 }
@@ -43,6 +42,9 @@ struct CrashView: View {
             // AS SOON AS YOU GET AN AUTHENTICATED USER THROW THEM INTO CRASHLYTICS
             .onAppear {
                 CrashManager.shared.setUserId(userId: "ABC123")
+                CrashManager.shared.setIsPremiumValue(isPremium: true)
+                CrashManager.shared.addLog(message: "crash_view_appeared")
+                CrashManager.shared.addLog(message: "Crash view appeared on user's screen.")
             }
         }
     }
