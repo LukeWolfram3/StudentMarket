@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 @MainActor
 struct VerifyEmailView: View {
     
